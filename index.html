@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Knight Motor Company — Driveshaft Shop Provo UT</title>
+    <style>
+        /* RESET & BASE */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #ffffff;
+            color: #000000;
+            line-height: 1.5;
+        }
+
+        /* FLUID CONTAINER – full width with responsive padding */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding-left: clamp(18px, 4vw, 70px);
+            padding-right: clamp(18px, 4vw, 70px);
+        }
+
+        /* HEADER – compact, professional, white/red/blue */
+        .article-header {
+            background: #ffffff;
+            border-bottom: 3px solid #c8102e;
+            padding: 12px 0 10px 0;
+        }
+
+        .header-inner {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px 20px;
+        }
+
+        .header-logo-area {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .logo-img {
+            width: 120px;
+            height: auto;
+            max-width: 100%;
+            display: block;
+            object-fit: contain;
+        }
+
+        .brand-name {
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: 0.2px;
+            color: #0033a0;
+            border-left: 2px solid #c8102e;
+            padding-left: 10px;
+            line-height: 1.2;
+        }
+
+        .header-phone {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #0033a0;
+            background: #f0f4fa;
+            padding: 4px 14px;
+            border-radius: 40px;
+            border: 1px solid #c8102e;
+            white-space: nowrap;
+        }
+
+        .header-phone span {
+            color: #c8102e;
+            font-weight: 700;
+        }
+
+        /* TITLE SECTION */
+        .hero-title {
+            background: #ffffff;
+            padding: 28px 0 22px 0;
+            border-bottom: 2px solid #e8eef4;
+        }
+
+        .hero-title h1 {
+            font-size: clamp(1.8rem, 5vw, 3.4rem);
+            font-weight: 800;
+            color: #0033a0;
+            line-height: 1.15;
+            letter-spacing: -0.01em;
+            max-width: 1100px;
+            margin-bottom: 6px;
+        }
+
+        .title-accent {
+            display: block;
+            width: 70px;
+            height: 4px;
+            background: #c8102e;
+            margin-top: 12px;
+            border-radius: 4px;
+        }
+
+        /* ARTICLE CONTENT – full width, justified paragraphs */
+        .article-body {
+            padding: 28px 0 40px 0;
+            background: #ffffff;
+        }
+
+        .article-body p {
+            text-align: justify;
+            font-size: clamp(0.95rem, 1.05vw, 1.1rem);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            color: #000000;
+            max-width: 100%;
+        }
+
+        .article-body h2 {
+            font-size: clamp(1.4rem, 2.5vw, 2.1rem);
+            font-weight: 700;
+            color: #0033a0;
+            margin: 2rem 0 0.5rem 0;
+            line-height: 1.2;
+            text-align: left;
+        }
+
+        .article-body h3 {
+            font-size: clamp(1.15rem, 1.6vw, 1.4rem);
+            font-weight: 700;
+            color: #0033a0;
+            margin: 1.6rem 0 0.3rem 0;
+            text-align: left;
+        }
+
+        .article-body h4 {
+            font-size: clamp(1rem, 1.3vw, 1.15rem);
+            font-weight: 700;
+            color: #c8102e;
+            margin: 1.4rem 0 0.3rem 0;
+            text-align: left;
+        }
+
+        .article-body ul,
+        .article-body ol {
+            text-align: justify;
+            padding-left: 1.8rem;
+            margin: 0.6rem 0 1rem 0;
+            line-height: 1.6;
+        }
+
+        .article-body li {
+            margin-bottom: 0.3rem;
+            text-align: justify;
+        }
+
+        .article-body strong {
+            color: #0033a0;
+            font-weight: 700;
+        }
+
+        /* brand accent box – light blue/red */
+        .info-highlight {
+            background: #f0f4fa;
+            border-left: 6px solid #c8102e;
+            padding: 1rem 1.5rem;
+            margin: 1.6rem 0 1.4rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .info-highlight p {
+            margin-bottom: 0.3rem;
+        }
+
+        /* INTERLINKING BOX — blue/red with proper contrast */
+        .related-article-box {
+            background: #0033a0;
+            border-left: 8px solid #c8102e;
+            padding: 1.8rem 2rem;
+            margin: 2.4rem 0 2rem 0;
+            border-radius: 0 12px 12px 0;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px 30px;
+        }
+
+        .related-article-box .related-text {
+            flex: 2 1 300px;
+            color: #ffffff;
+        }
+
+        .related-article-box .related-text h3 {
+            color: #ff6b7a;
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+            text-align: left;
+        }
+
+        .related-article-box .related-text p {
+            color: #d4e3ed;
+            font-size: 1rem;
+            line-height: 1.5;
+            margin-bottom: 0;
+            text-align: left;
+        }
+
+        .related-article-box .related-text p strong {
+            color: #ffffff;
+            font-weight: 700;
+        }
+
+        .related-article-box .related-btn {
+            flex: 0 0 auto;
+            background: #c8102e;
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 1.1rem;
+            padding: 12px 34px;
+            border-radius: 40px;
+            text-decoration: none;
+            text-align: center;
+            border: 2px solid #c8102e;
+            transition: all 0.2s ease;
+            letter-spacing: 0.3px;
+            white-space: nowrap;
+            box-shadow: 0 2px 8px rgba(200, 16, 46, 0.3);
+        }
+
+        .related-article-box .related-btn:hover {
+            background: #ffffff;
+            color: #0033a0;
+            border-color: #c8102e;
+            box-shadow: 0 4px 14px rgba(200, 16, 46, 0.4);
+        }
+
+        /* MAP SECTION */
+        .map-section {
+            padding: 24px 0 16px 0;
+            background: #ffffff;
+            border-top: 2px solid #e8eef4;
+            margin-top: 0.3rem;
+        }
+
+        .map-section h2 {
+            font-size: clamp(1.3rem, 2.2vw, 2rem);
+            font-weight: 700;
+            color: #0033a0;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.01em;
+        }
+
+        .map-wrapper {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            background: #eaeaea;
+            border-radius: 10px;
+            border: 2px solid #c8102e;
+            margin: 12px 0 8px 0;
+        }
+
+        .map-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* FOOTER – dark blue / red accents */
+        .article-footer {
+            background: #0033a0;
+            color: #ffffff;
+            padding: 28px 0 24px 0;
+            border-top: 5px solid #c8102e;
+        }
+
+        .footer-inner {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px 24px;
+        }
+
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .footer-logo {
+            width: 90px;
+            height: auto;
+            max-width: 100%;
+            display: block;
+            object-fit: contain;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 6px;
+            padding: 4px;
+            filter: brightness(0) invert(1);
+        }
+
+        .footer-info {
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: #d4e3ed;
+        }
+
+        .footer-info strong {
+            color: #ff6b7a;
+            font-weight: 600;
+        }
+
+        .footer-address {
+            font-style: normal;
+            color: #b8cfe0;
+        }
+
+        .footer-phone {
+            font-weight: 600;
+            color: #ffffff;
+            background: #002a80;
+            padding: 4px 14px;
+            border-radius: 30px;
+            display: inline-block;
+            border: 1px solid #ff6b7a;
+            font-size: 0.95rem;
+        }
+
+        .footer-phone span {
+            color: #ff6b7a;
+        }
+
+        .footer-copy {
+            font-size: 0.8rem;
+            color: #a5c0d4;
+            margin-top: 16px;
+            text-align: center;
+            width: 100%;
+            border-top: 1px solid #002a80;
+            padding-top: 16px;
+        }
+
+        @media (max-width: 700px) {
+            .header-inner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .brand-name {
+                font-size: 0.9rem;
+                padding-left: 8px;
+                border-left: 2px solid #c8102e;
+            }
+            .header-phone {
+                font-size: 0.9rem;
+                padding: 3px 12px;
+                align-self: flex-start;
+            }
+            .footer-inner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .hero-title h1 {
+                font-size: 1.7rem;
+            }
+            .article-body h2 {
+                font-size: 1.3rem;
+            }
+            .logo-img {
+                width: 80px;
+            }
+            .footer-logo {
+                width: 60px;
+            }
+            .related-article-box {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .related-article-box .related-btn {
+                white-space: normal;
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        .article-body img {
+            max-width: 100%;
+            height: auto;
+            margin: 0.6rem 0;
+            border-radius: 6px;
+            display: block;
+        }
+
+        .article-body p:last-of-type {
+            margin-bottom: 0;
+        }
+
+        a {
+            color: #c8102e;
+            text-decoration: underline;
+            font-weight: 600;
+            text-underline-offset: 2px;
+        }
+
+        a:hover {
+            color: #0033a0;
+        }
+
+        .article-body a:not([class]) {
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header class="article-header">
+        <div class="container header-inner">
+            <div class="header-logo-area">
+                <img class="logo-img" src="https://irp.cdn-website.com/b0b88a5c/dms3rep/multi/opt/Logo+Transparent-1920w.png" alt="Knight Motor Company">
+                <span class="brand-name">Knight Motor Company</span>
+            </div>
+            <div class="header-phone"><span>📞</span> (435) 250-3838</div>
+        </div>
+    </header>
+
+    <!-- ===== TITLE ===== -->
+    <section class="hero-title">
+        <div class="container">
+            <h1>Can Driveshaft Problems Affect Vehicle Safety?</h1>
+            <span class="title-accent"></span>
+        </div>
+    </section>
+
+    <!-- ===== ARTICLE BODY ===== -->
+    <main class="article-body">
+        <div class="container">
+
+            <!-- PARAGRAPH 1 (FIRST LINK → GMB) -->
+            <p>A vehicle's drivetrain plays an important role in transferring power from the engine to the wheels. One important component in this system is the driveshaft. When the driveshaft develops a problem, the vehicle may experience vibrations, unusual sounds, or changes in performance.</p>
+
+            <p>Ignoring these symptoms can affect more than driving comfort. Serious drivetrain problems may eventually affect vehicle control and reliable operation. This is why drivers should take unusual driveshaft symptoms seriously.</p>
+
+            <p>A professional <a href="https://maps.app.goo.gl/BZWe6aoRZ4gpRLsC9" target="_blank" rel="noopener noreferrer">Driveshaft shop in Provo UT</a> can inspect the drivetrain and determine whether a driveshaft needs repair, balancing, or replacement. Knight Motor Company provides automotive support for drivers who need professional maintenance and repair services.</p>
+
+            <p>Understanding how driveshaft problems affect vehicle safety can help drivers recognize warning signs and seek appropriate service before a small concern becomes a larger issue.</p>
+
+            <h2>What Is a Driveshaft?</h2>
+            <p>A driveshaft is a mechanical component that transfers rotational power through the drivetrain. It is commonly found in vehicles with rear-wheel drive, four-wheel drive, and some all-wheel-drive systems.</p>
+            <p>The driveshaft connects different drivetrain components and helps transfer power toward the wheels.</p>
+            <p>Because it rotates while the vehicle operates, the driveshaft must remain properly balanced and securely connected.</p>
+            <p>Several components work with the driveshaft, including universal joints, center support bearings, yokes, and related connections. The exact design varies by vehicle.</p>
+            <p>A damaged or worn component can interfere with smooth power delivery.</p>
+            <p>A professional <strong>Driveshaft shop</strong> can inspect these components and determine whether service is necessary.</p>
+
+            <h2>What Are Common Signs of Driveshaft Problems?</h2>
+            <p>Driveshaft problems can produce several noticeable symptoms. One of the most common signs is vibration while driving.</p>
+            <p>The vibration may become stronger as the vehicle increases speed. Drivers may also notice clunking, knocking, squeaking, or other unusual sounds.</p>
+            <p>Another possible warning sign is difficulty accelerating smoothly. A damaged universal joint or other drivetrain component can affect how power moves through the vehicle.</p>
+            <p>Drivers may also notice movement or looseness underneath the vehicle.</p>
+            <p>These symptoms should not automatically be assumed to be a driveshaft failure because similar signs can come from tires, wheels, suspension components, or other drivetrain parts.</p>
+            <p>A qualified technician can perform an inspection to identify the actual source of the problem.</p>
+
+            <h2>Can Driveshaft Problems Affect Vehicle Control?</h2>
+            <p>Yes, serious driveshaft problems can potentially affect vehicle operation and control.</p>
+            <p>The severity depends on the specific component that has failed and the condition of the drivetrain.</p>
+            <p>A worn universal joint, damaged shaft, loose connection, or other failure can create excessive vibration or unpredictable drivetrain behavior.</p>
+            <p>In severe cases, a damaged component may fail while the vehicle is moving.</p>
+            <p>This is one reason unusual drivetrain symptoms should not be ignored.</p>
+            <p>If a driver notices severe vibration, loud mechanical noises, or sudden changes in vehicle behavior, they should safely reduce speed and have the vehicle inspected.</p>
+            <p>Continuing to drive a vehicle with a serious mechanical problem can increase the risk of additional damage.</p>
+
+            <h2>Why Does Driveshaft Balancing Matter?</h2>
+            <p>Proper balance is important because the driveshaft rotates at high speeds.</p>
+            <p>An unbalanced driveshaft can create vibration that becomes more noticeable as vehicle speed increases.</p>
+            <p>Excessive vibration can affect driving comfort, but it may also place additional stress on related drivetrain components.</p>
+            <p>A professional technician can inspect the driveshaft and determine whether balancing is necessary.</p>
+            <p>In some cases, balancing may correct a vibration caused by an imbalance. However, a technician must first determine whether another damaged component is responsible.</p>
+            <p>Replacing or balancing the driveshaft without identifying the actual cause may not solve the problem.</p>
+            <p>Professional diagnosis helps ensure that the appropriate service is performed.</p>
+
+            <h2>Can Worn Drivetrain Parts Cause Problems?</h2>
+            <p>Yes. Several components connected to the driveshaft can wear over time.</p>
+            <p>Universal joints can develop play or looseness. Support bearings can wear out. Yokes and other connection points can also develop damage.</p>
+            <p>When these components deteriorate, they can affect the driveshaft's operation.</p>
+            <p>Heavy loads, frequent towing, rough roads, high mileage, and demanding driving conditions may contribute to drivetrain wear.</p>
+            <p>Regular inspection can help identify worn components before they fail completely.</p>
+            <p>A <strong>Car maintenance service</strong> can provide an opportunity to inspect various vehicle systems and identify concerns that may need additional attention.</p>
+            <p>If a technician notices drivetrain symptoms, a more detailed driveshaft inspection may be recommended.</p>
+
+            <!-- SECOND LINK (middle of article) -->
+            <h2>Can Tire or Suspension Problems Feel Similar?</h2>
+            <p>Yes. Not every vibration or unusual movement comes from the driveshaft.</p>
+            <p>Tire imbalance, uneven tire wear, damaged wheels, alignment issues, and suspension problems can create similar symptoms.</p>
+            <p>For example, a vibration that occurs at a specific speed may be related to tire or wheel balance rather than the drivetrain.</p>
+            <p>Professional <strong>Tire service</strong> can help identify tire-related concerns.</p>
+            <p>Suspension components can also cause unusual noises and changes in vehicle handling.</p>
+            <p>This is why proper diagnosis is important.</p>
+            <p>A technician should inspect the vehicle rather than assuming the driveshaft is responsible based only on symptoms.</p>
+            <p>An accurate diagnosis can prevent unnecessary repairs and help ensure that the actual problem is addressed. For reliable automotive service, <a href="https://knightmotorco.com/" target="_blank" rel="noopener noreferrer">Knight Motor Company</a> offers professional inspection and repair solutions.</p>
+
+            <h2>How Can a Car Inspection Identify Drivetrain Issues?</h2>
+            <p>A professional inspection can help identify signs of driveshaft and drivetrain problems.</p>
+            <p>A <strong>Car inspection station</strong> may examine the vehicle's major mechanical systems and look for visible wear, leaks, loose connections, or other concerns.</p>
+            <p>A detailed drivetrain inspection may involve checking the driveshaft, universal joints, support bearings, mounts, and related components.</p>
+            <p>The technician may also take the vehicle for a controlled test drive when appropriate.</p>
+            <p>Combining visual inspection with driving symptoms can help narrow down the source of a problem.</p>
+            <p>If specialized driveshaft work is required, the vehicle may be referred to a professional <strong>Driveshaft shop in Provo UT</strong>.</p>
+            <p>Early inspection can help drivers understand whether a concern requires immediate repair or routine service.</p>
+
+            <h2>When Should You Stop Driving?</h2>
+            <p>Some driveshaft symptoms may require immediate attention.</p>
+            <p>Severe vibration, loud clunking, grinding, sudden loss of power transfer, or visible drivetrain damage should not be ignored.</p>
+            <p>If the vehicle becomes difficult to control or produces severe mechanical symptoms, the safest choice may be to stop driving and arrange professional assistance.</p>
+            <p>Continuing to operate a vehicle with a serious drivetrain problem can increase damage.</p>
+            <p>In some cases, a component may fail completely while the vehicle is moving.</p>
+            <p>The appropriate response depends on the severity of the symptoms.</p>
+            <p>A professional technician can determine whether the vehicle can safely reach a repair facility or requires towing.</p>
+
+            <h2>How Does Regular Maintenance Protect the Driveshaft?</h2>
+            <p>Routine maintenance can help identify developing drivetrain concerns before they become major failures.</p>
+            <p>During regular service, technicians can inspect components for wear, leaks, damage, and other warning signs.</p>
+            <p>An <strong>Oil change service</strong> is primarily focused on engine lubrication, but a professional maintenance visit may also provide an opportunity to examine other vehicle systems.</p>
+            <p>Drivers should follow the manufacturer's recommendations for drivetrain inspections and maintenance.</p>
+            <p>Vehicles used for towing, heavy loads, off-road driving, or frequent long-distance travel may experience additional stress.</p>
+            <p>Regular maintenance can help owners stay aware of component condition.</p>
+            <p>Although maintenance cannot prevent every failure, identifying worn parts early may reduce the risk of unexpected breakdowns.</p>
+
+            <h2>How Do You Choose a Driveshaft Repair Provider?</h2>
+            <p>Choosing the right repair provider is important when dealing with drivetrain concerns.</p>
+            <p>Look for a provider with experience working on your specific vehicle and drivetrain configuration.</p>
+            <p>A professional <strong>Driveshaft shop in Provo UT</strong> should have appropriate diagnostic tools and equipment for inspecting driveshaft components.</p>
+            <p>Clear communication is also important. The technician should explain what they found and why a particular repair is recommended.</p>
+            <p>Drivers should ask whether the issue requires balancing, repair, component replacement, or additional diagnostic testing.</p>
+            <p>A trusted automotive provider should also explain the expected repair timeline and cost before significant work begins.</p>
+            <p>Knight Motor Company provides automotive maintenance and repair support for drivers who need professional vehicle service.</p>
+
+            <!-- FAQ SECTION -->
+            <h2>Frequently Asked Questions</h2>
+
+            <h3>Can driveshaft problems affect vehicle safety?</h3>
+            <p>Yes. Severe driveshaft problems can affect vehicle operation and may create vibrations, unusual movement, or unpredictable drivetrain behavior. Serious symptoms should be inspected promptly.</p>
+
+            <h3>What are the main signs of a damaged driveshaft?</h3>
+            <p>Common signs include strong vibrations, clunking noises, squeaking, difficulty accelerating smoothly, or unusual movement from underneath the vehicle.</p>
+
+            <h3>Can tire problems feel like driveshaft problems?</h3>
+            <p>Yes. Tire imbalance, uneven tire wear, wheel damage, and alignment problems can create vibrations similar to some drivetrain issues. Professional inspection can help identify the actual cause.</p>
+
+            <h3>How often should a driveshaft be inspected?</h3>
+            <p>Inspection needs vary based on the vehicle, mileage, driving conditions, and manufacturer recommendations. Vehicles used for heavy loads or towing may require closer attention.</p>
+
+            <h3>Where can I find a Driveshaft shop in Provo UT?</h3>
+            <p>Look for an automotive provider with experience diagnosing and repairing drivetrain components. Knight Motor Company can help drivers identify vehicle problems and determine the appropriate repair service.</p>
+
+            <!-- ===== INTERLINKING BOX (before Conclusion) ===== -->
+            <div class="related-article-box">
+                <div class="related-text">
+                    <h3>📄 Related Reading</h3>
+                    <p><strong>How Much Does a Car Maintenance Service Usually Cost?</strong> — Learn about the factors that affect maintenance costs, from oil changes to tire service, and how regular care can save you money.</p>
+                </div>
+                <a href="https://car-maintenance-service.vercel.app/" target="_blank" rel="noopener noreferrer" class="related-btn">Read Article →</a>
+            </div>
+
+            <!-- CONCLUSION + THIRD LINK (website) -->
+            <h2>Conclusion</h2>
+            <p>Driveshaft problems can affect vehicle performance, reliability, and potentially safety when they become severe. Symptoms such as strong vibrations, clunking sounds, and unusual drivetrain behavior should receive professional attention.</p>
+            <p>A <strong>Driveshaft shop in Provo UT</strong> can inspect the driveshaft and related components to determine the cause of the problem.</p>
+            <p><a href="https://knightmotorco.com/" target="_blank" rel="noopener noreferrer">Knight Motor Company</a> provides professional automotive maintenance and repair support for local drivers.</p>
+            <p>Regular <strong>Car maintenance service</strong> can help identify developing mechanical concerns. Services such as <strong>Tire service</strong> and inspections can also help rule out other causes of vibrations or unusual vehicle behavior.</p>
+            <p>When drivetrain problems are suspected, professional diagnosis is important. An <strong>Auto repair shop</strong> or specialized Driveshaft shop can determine what repairs are appropriate.</p>
+            <p>By responding to warning signs early and keeping up with routine maintenance, drivers can help protect their vehicles and enjoy safer, more dependable performance on the road.</p>
+
+        </div>
+    </main>
+
+    <!-- ===== MAP SECTION ===== -->
+    <section class="map-section">
+        <div class="container">
+            <h2>📍 Find Us on Google Maps</h2>
+            <div class="map-wrapper">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3045.3711669486415!2d-111.6941636!3d40.2452818!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x874d9bd751d8f717%3A0x75ac26b4e2981705!2sKnight%20Motor%20Company!5e0!3m2!1sen!2s!4v1787841450107!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="article-footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-brand">
+                    <img class="footer-logo" src="https://irp.cdn-website.com/b0b88a5c/dms3rep/multi/opt/Logo+Transparent-1920w.png" alt="Knight Motor Company">
+                    <div class="footer-info">
+                        <strong>Knight Motor Company</strong><br>
+                        <span class="footer-address">2020 W 820 N, Provo, UT 84601, United States</span>
+                    </div>
+                </div>
+                <div class="footer-phone"><span>📞</span> (435) 250-3838</div>
+            </div>
+            <div class="footer-copy">
+                &copy; 2026 Knight Motor Company — Professional Automotive Services
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
